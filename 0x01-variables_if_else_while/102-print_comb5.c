@@ -1,4 +1,4 @@
-#include <stdio.h>
+include <stdio.h>
 /**
  * main - entry block
  *
@@ -19,7 +19,7 @@ int main(void)
 			putchar(j % 10 + '0');
 			if (i != 98 || j != 99)
 			{
-				pputchar(',');
+				putchar(',');
 				putchar(' ');
 			}
 		}	
