@@ -1,8 +1,8 @@
 #include "main.h"
 /**
- *  * print_times_table - prints the times table
- *   * @n: takes in an integer
- *    */
+ * print_times_table - prints the times table
+ * @n: takes in an integer
+ */
 void print_times_table(int n)
 {
 	int i, j, k;
