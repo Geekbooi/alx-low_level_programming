@@ -1,24 +1,33 @@
-#include <stdio.h>
-/**
- * main - main function
- *
- * Return: returns 0
- */
-int main(void)
-{
-	unsigned int a = 2;
-	unsigned long n = 612852475143;
+#include "main.h"
 
-	while (a != n)
+/**
+ * print_triangle - prints triangle
+ *
+ * @size: size of triangle
+ */
+void print_triangle(int size)
+{
+	int i;
+	int j;
+	int k;
+
+	if (size <= 0)
 	{
-		if (n % a == 0)
+		_putchar('\n');
+	} else
+	{
+
+		for (i = 1; i <= size; i++)
 		{
-			n = n / a;
-		} else
-		{
-			a++;
+			for (j = size - i ; j > 0; j--)
+			{
+				_putchar(' ');
+			}
+			for (k = 0; k < i; k++)
+			{
+				_putchar('#');
+			}
+			_putchar('\n');
 		}
 	}
-	printf("%lu\n", n);
-	return (0);
 }
