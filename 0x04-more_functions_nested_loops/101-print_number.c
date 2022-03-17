@@ -27,6 +27,7 @@ void print_number(int n)
 		x += 1;
 		y += 1;
 	}
+
 	while (x != 0)
 	{
 		x = x / 10;
