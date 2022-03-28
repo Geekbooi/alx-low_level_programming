@@ -19,5 +19,5 @@ void print_diagsums(int *a, int size)
 		len2 += a[i + (size - 1) - j];
 		j++;
 	}
-	:printf("%d, %d\n", len1, len2);
+	printf("%d, %d\n", len1, len2);
 }
