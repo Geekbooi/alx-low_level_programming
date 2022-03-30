@@ -12,9 +12,9 @@ int _sqrt_recur(int n, int x)
 		return (x);
 	}
 	else if (x * x > n)
-	{	
+	{
 		return (-1);
-	}
+	{
 	return (_sqrt_recur(n, x + 1));
 }
 /**
