@@ -68,39 +68,39 @@ char **strtow(char *str)
 	}
 	if (count == 0)
 		return (NULL);
-		ptr = (char **) malloc(sizeof(char *) * (count + 1));
-		if (ptr)
+	ptr = (char **) malloc(sizeof(char *) * (count + 1));
+	if (ptr)
+	{
+		inWord = 0;
+		for (i = 0; found < count; i++)
 		{
-			inWord = 0;
-			for (i = 0; found < count; i++)
+			if (*(str + i) != ' ')
 			{
-																							if (*(str + i) != ' ')
-		{
-			if (!inWord)
+				if (!inWord)
+				{
+					inWord = 1;
+					*(ptr + found) = getWord(i, str);
+					if (!*(ptr + found++))
+						error = 1;
+				}
+			}
+			else
 			{
-				inWord = 1;
-				*(ptr + found) = getWord(i, str);
-				if (!*(ptr + found++))
-					error = 1;
+				if (inWord)
+				inWord = 0;
 			}
 		}
-		else
+		*(ptr + found) = NULL;
+		/* if there is an error, free all memory */
+		if (error)
 		{
-			if (inWord)
-			inWord = 0;
+			for (i = 0; i < count + 1; i++)
+			{
+				free((ptr + i));
+			}
+			free(ptr);
+			ptr = NULL;
+			}
 		}
-	}
-	*(ptr + found) = NULL;
-	/* if there is an error, free all memory */
-	if (error)
-	{
-		for (i = 0; i < count + 1; i++)
-		{
-																																			free(*(ptr + i));
-																																							}
-																														free(ptr);
-																																	ptr = NULL;
-																																			}
-																					}
-										return (ptr);
+		return (ptr);
 }
