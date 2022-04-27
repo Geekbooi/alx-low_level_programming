@@ -13,6 +13,7 @@ listint_t *find_listint_loop(listint_t *head)
 
 	if (head == NULL)
 		return (NULL);
+
 	currents = currentf = head;
 	do {
 		if (currents->next)
@@ -24,11 +25,13 @@ listint_t *find_listint_loop(listint_t *head)
 		else
 			return (NULL);
 	} while (currentf != currents);
+
 	currents = head;
 	while (currentf != currents)
 	{
 		currentf = currentf->next;
 		currents = currents->next;
 	}
+
 	return (currents);
 }
