@@ -13,6 +13,5 @@ int sum_dlistint(dlistint_t *head)
 		suma = suma + head->n;
 		head = head->next;
 	}
-
 	return (suma);
 }
