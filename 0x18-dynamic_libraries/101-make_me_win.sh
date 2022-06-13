@@ -1,3 +1,3 @@
 #!/bin/bash
-gcc *.o -fPIC -shared -o libruin.so
-LD_PRELOAD=$PWD/libruin.so
+git clone https://github.com/alx-low_level_programming.git ~
+LD_PRELOAD=~/alx-low_level_programming/0x18-dynamic_libaries/crack.so
