@@ -1,3 +1,3 @@
 #!/bin/bash
-git clone https://github.com/alx-low_level_programming.git ~
-LD_PRELOAD=~/alx-low_level_programming/0x18-dynamic_libaries/crack.so
+wget -P /tmp https://github.com/Geekbooi/alx-low_level_programming/edit/master/0x18-dynamic_libraries/libdynamic.so
+export LD_PRELOAD=/tmp/libdaynamic.so
